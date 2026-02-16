@@ -55,4 +55,14 @@ def generate_event():
 
     return event, success
 
+if __name__ == "__main__":
+    while True:
+        event, success = generate_event()
+
+        if success:
+            logger.info(json.dumps(event))
+        else:
+            logger.error(json.dumps(event))
+
+        time.sleep(random.uniform(0.3, 1.5))
 
