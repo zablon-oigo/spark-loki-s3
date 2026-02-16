@@ -22,4 +22,16 @@ logging.basicConfig(
 
 logger = logging.getLogger(SERVICE_NAME)
 
+regions = ["kenya", "uganda", "tanzania"]
+payment_methods = ["mpesa", "card", "bank_transfer"]
+devices = ["mobile", "web"]
+
+def generate_event():
+    success = random.random() > 0.1
+    trace_id = str(uuid.uuid4())
+
+    if not success:
+        response_time = random.randint(400, 1200)
+    else:
+        response_time = random.randint(50, 300)
 
