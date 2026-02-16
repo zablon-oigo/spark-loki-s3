@@ -35,3 +35,24 @@ def generate_event():
     else:
         response_time = random.randint(50, 300)
 
+    event = {
+        "service": SERVICE_NAME,
+        "environment": ENVIRONMENT,
+        "trace_id": trace_id,
+        "event": "order_created",
+        "order_id": str(uuid.uuid4()),
+        "user_id": random.randint(1, 10000),
+        "region": random.choice(regions),
+        "payment_method": random.choice(payment_methods),
+        "device": random.choice(devices),
+        "currency": "KES",
+        "amount": round(random.uniform(100, 1000), 2),
+        "status": "success" if success else "failed",
+        "retry_count": random.randint(0, 3),
+        "response_time_ms": response_time,
+        "event_time": datetime.now(timezone.utc).isoformat()
+    }
+
+    return event, success
+
+
