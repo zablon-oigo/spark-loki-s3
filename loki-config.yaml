@@ -54,3 +54,6 @@ ingester:
       replication_factor: 1
 
 
+limits_config:
+  retention_period: 168h          
+  max_cache_freshness_per_query: 10m
