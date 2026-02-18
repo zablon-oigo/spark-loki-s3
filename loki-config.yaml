@@ -5,3 +5,15 @@ server:
   grpc_listen_port: 0
 
 
+common:
+  path_prefix: ./loki/raw          
+  storage:
+    s3:
+      endpoint: s3.amazonaws.com
+      region: us-east-1
+      bucketnames: 
+      access_key_id: ${AWS_ACCESS_KEY}
+      secret_access_key: ${AWS_SECRET_ACCESS_KEY}
+      s3forcepathstyle: true
+  replication_factor: 1
+
