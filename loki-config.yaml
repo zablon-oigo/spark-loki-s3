@@ -57,3 +57,13 @@ ingester:
 limits_config:
   retention_period: 168h          
   max_cache_freshness_per_query: 10m
+
+
+query_range:
+  align_queries_with_step: true
+
+ruler:
+  storage:
+    type: local
+    local:
+      directory: /tmp/loki/rules
