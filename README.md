@@ -45,5 +45,16 @@ spark.sql.catalog.spark_catalog.type  hadoop
 spark.sql.catalog.spark_catalog.warehouse file:///tmp/iceberg-warehouse 
 spark.sql.defaultCatalog     spark_catalog
 
+# aws s3 config
+spark.hadoop.fs.s3a.aws.credentials.provider       org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider  
+spark.hadoop.fs.s3a.fast.upload                   true
+spark.hadoop.fs.s3a.fast.upload.buffer            disk   
+spark.hadoop.fs.s3a.fast.upload.active.blocks     4
+spark.hadoop.fs.s3a.connection.maximum            1000     
+spark.hadoop.fs.s3a.path.style.access             false   
+spark.hadoop.fs.s3a.attempts.maximum              10
+spark.hadoop.fs.s3a.retry.limit                   10
+spark.hadoop.fs.s3a.committer.name                magic
+
 ```
 
