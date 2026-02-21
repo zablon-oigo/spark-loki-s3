@@ -35,7 +35,6 @@ wget https://repo1.maven.org/maven2/org/apache/iceberg/iceberg-spark-runtime-4.0
 -O /opt/spark/jars/iceberg-spark-runtime-4.0_2.13-1.10.1.jar
 
 ```
-
 Spark Default Config
 
 ```sh
@@ -45,18 +44,6 @@ spark.sql.catalog.spark_catalog    org.apache.iceberg.spark.SparkSessionCatalog
 spark.sql.catalog.spark_catalog.type  hadoop
 spark.sql.catalog.spark_catalog.warehouse file:///tmp/iceberg-warehouse 
 spark.sql.defaultCatalog     spark_catalog
-
-# aws s3 config
-
-spark.hadoop.fs.s3a.aws.credentials.provider       org.apache.hadoop.fs.s3a.SimpleAWSCredentialsProvider  
-spark.hadoop.fs.s3a.fast.upload                   true
-spark.hadoop.fs.s3a.fast.upload.buffer            disk   
-spark.hadoop.fs.s3a.fast.upload.active.blocks     4
-spark.hadoop.fs.s3a.connection.maximum            1000     
-spark.hadoop.fs.s3a.path.style.access             false   
-spark.hadoop.fs.s3a.attempts.maximum              10
-spark.hadoop.fs.s3a.retry.limit                   10
-spark.hadoop.fs.s3a.committer.name                magic
 
 ```
 
